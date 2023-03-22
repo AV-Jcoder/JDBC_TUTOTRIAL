@@ -44,7 +44,7 @@ public class DBConnector {
     }
 
     private static Connection getConnectionFromPool() throws SQLException {
-        ResourceBundle bundle = ResourceBundle.getBundle("postgres");
+        ResourceBundle bundle = ResourceBundle.getBundle("postgresql");
         String url = bundle.getString("URL");
         String login = bundle.getString("LOGIN");
         String pass = bundle.getString("PASSWORD");

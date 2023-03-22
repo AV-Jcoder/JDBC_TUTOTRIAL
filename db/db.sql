@@ -4,12 +4,13 @@ CREATE DATABASE organization ENCODING 'UTF-8';
 __________________________________________________
 
 CREATE TABLE IF NOT EXISTS employee (
-id SERIAL PRIMARY KEY,
-name VARCHAR(255) NOT NULL,
-phone VARCHAR(255) UNIQUE NOT NULL,
-email VARCHAR(255) NOT NULL,
-post VARCHAR(255) NOT NULL;
-salary BIGINT NOT NULL);
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    post VARCHAR(255) NOT NULL;
+    salary BIGINT NOT NULL
+);
 __________________________________________________
 
 INSERT INTO employee (name,phone,email,post,salary)
@@ -19,11 +20,12 @@ VALUES ('Alexey','+7(909)909-99-09','alex@mail.ru','ingener',70000),
 __________________________________________________
 
 CREATE TABLE IF NOT EXISTS employee_car (
-id SERIAL PRIMARY KEY,
-reg_num VARCHAR(20) UNIQUE NOT NULL,
-brand_model VARCHAR(20) NOT NULL,
-employee_id BIGINT UNSIGNED NOT NULL,
-FOREIGN KEY (employee_id) REFERENCES employee(id));
+    car_id SERIAL PRIMARY KEY,
+    reg_num VARCHAR(20) UNIQUE NOT NULL,
+    brand_model VARCHAR(20) NOT NULL,
+    employee_id BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES employee(id)
+);
 __________________________________________________
 
 INSERT INTO employee_car
